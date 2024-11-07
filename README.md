@@ -41,7 +41,7 @@
      - [ ] Products.java <br>
           - [ ] 상품 재고 계산 <br>
      - [ ] ProductsReader.java <br>
-          - [ ] products.md 불러오기 <br> 
+          - [X] products.md 불러오기 <br> 
      - [ ] Pay.java <br>
           - [ ] 할인 미 포함 된 지불 해야 하는 금액 계산 <br>
      - [ ] Promotions.java <br>
