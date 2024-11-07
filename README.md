@@ -28,8 +28,8 @@
 ---
 - [ ] Controller <br>
      - [ ] ProductsController.java <br>
-          - [ ] [상품명-갯수]형식 변환 <br>
-          - [ ] 상품 제고 업데이트 <br>
+          - [X] [상품명-갯수],[상품명-갯수] 입력을 상품멱-갯수 리스트로 변환 <br>
+          - [ ] 상품 재고 업데이트 <br>
      - [ ] PayController.java <br>
           - [ ] 최종 결제 금액 계산 <br>
      - [ ] ReceiptController.java <br>
@@ -40,10 +40,14 @@
 - [ ] Model <br>
      - [ ] Products.java <br>
           - [ ] 상품 재고 계산 <br>
+     - [ ] ProductsReader.java <br>
+          - [ ] products.md 불러오기 <br> 
      - [ ] Pay.java <br>
           - [ ] 할인 미 포함 된 지불 해야 하는 금액 계산 <br>
-     - [ ] Promotion.java <br>
+     - [ ] Promotions.java <br>
           - [ ] 할인률 계산 <br>
+     - [ ] PromotionsReader.java <br>
+          - [ ] promotions.md 불러오기 <br> 
      - [ ] Membership.java <br>
           - [ ] 할인률 계산 <br>
      - [ ] Receipt.java <br>
