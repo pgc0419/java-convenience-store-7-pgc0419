@@ -15,9 +15,9 @@ public class ProductsReader {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] fields = line.split(",");
-                String name = fields[0];
+                String productName = fields[0];
                 int quantity = Integer.parseInt(fields[2]);
-                products.add(new Products(name, quantity));
+                products.add(new Products(productName, quantity));
             }
         } catch (IOException e) {
         }
@@ -44,9 +44,8 @@ public class ProductsReader {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] fields = line.split(",");
-                String promotion = null;
                 String productOfPromotion = fields.length > 3 ? fields[3] : null;
-                promotions.add(new Promotions(promotion, productOfPromotion));
+                promotions.add(new Promotions(productOfPromotion));
             }
         } catch (IOException e) {
         }

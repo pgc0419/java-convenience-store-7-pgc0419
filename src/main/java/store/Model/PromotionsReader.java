@@ -7,4 +7,5 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PromotionsReader {
+    private static final String FILE_PATH = "resources/products.md";
 }

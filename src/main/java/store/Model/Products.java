@@ -1,11 +1,11 @@
 package store.Model;
 
 public class Products {
-    private String name;
+    private String productName;
     private int quantity;
 
-    public Products(String name, int quantity) {
-        this.name = name;
+    public Products(String productName, int quantity) {
+        this.productName = productName;
         this.quantity = quantity;
     }
 }

@@ -6,17 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductsController {
-    public List<String> parseNames() {
-        List<String> names = new ArrayList<>();
+    public List<String> parseProductNames() {
+        List<String> productNames = new ArrayList<>();
         String[] productArray = InputView.readProduct();
 
         for (String product : productArray) {
             product = product.trim().replace("[", "").replace("]", "");
             String[] parts = product.split("-");
-            names.add(parts[0].trim());
+            productNames.add(parts[0].trim());
         }
 
-        return names;
+        return productNames;
     }
 
     public List<String> parseQuantities() {
