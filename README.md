@@ -51,7 +51,7 @@
      - [ ] Date.java <br>
           - [ ] 날짜 계산 <br>
      - [ ] PromotionsReader.java <br>
-          - [ ] promotions.md 불러오기 <br> 
+          - [X] promotions.md 불러오기 <br> 
      - [ ] Membership.java <br>
           - [ ] 할인률 계산 <br>
      - [ ] Receipt.java <br>

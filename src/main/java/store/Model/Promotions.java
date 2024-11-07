@@ -2,10 +2,10 @@ package store.Model;
 
 public class Promotions {
     private final String promotionName;
-    private final String buy;
-    private final String get;
+    private final int buy;
+    private final int get;
 
-    public Promotions(String promotionName, String buy, String get) {
+    public Promotions(String promotionName, int buy, int get) {
         this.promotionName = promotionName;
         this.buy = buy;
         this.get = get;

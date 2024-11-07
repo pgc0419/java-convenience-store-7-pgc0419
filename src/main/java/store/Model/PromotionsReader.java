@@ -8,4 +8,35 @@ import java.util.List;
 
 public class PromotionsReader {
     private static final String FILE_PATH = "resources/products.md";
+
+    public List<Promotions> readPromotions() {
+        List<Promotions> promotions = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] fields = line.split(",");
+                String promotionName = fields[0];
+                int buy = Integer.parseInt(fields[1]);
+                int get = Integer.parseInt(fields[2]);
+                promotions.add(new Promotions(promotionName, buy, get));
+            }
+        } catch (IOException e) {
+        }
+        return promotions;
+    }
+
+    public List<Date> readDate() {
+        List<Date> date = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] fields = line.split(",");
+                String start_date = fields[3];
+                String end_date = fields[4];
+                date.add(new Date(start_date, end_date));
+            }
+        } catch (IOException e) {
+        }
+        return date;
+    }
 }
