@@ -1,12 +1,13 @@
 package store.Model;
 
 public class Promotions {
-    private String promotionName;
-    private String buy;
-    private String get;
-    private String productOfPromotion;
+    private final String promotionName;
+    private final String buy;
+    private final String get;
 
-    public Promotions(String productOfPromotion) {
-        this.productOfPromotion = productOfPromotion;
+    public Promotions(String promotionName, String buy, String get) {
+        this.promotionName = promotionName;
+        this.buy = buy;
+        this.get = get;
     }
 }

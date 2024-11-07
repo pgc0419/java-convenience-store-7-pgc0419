@@ -17,7 +17,8 @@ public class ProductsReader {
                 String[] fields = line.split(",");
                 String productName = fields[0];
                 int quantity = Integer.parseInt(fields[2]);
-                products.add(new Products(productName, quantity));
+                String productOfPromotion = fields.length > 3 ? fields[3] : null;
+                products.add(new Products(productName, quantity, productOfPromotion));
             }
         } catch (IOException e) {
         }
@@ -36,19 +37,5 @@ public class ProductsReader {
         } catch (IOException e) {
         }
         return pay;
-    }
-
-    public List<Promotions> readProductsOfPromotions() {
-        List<Promotions> promotions = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] fields = line.split(",");
-                String productOfPromotion = fields.length > 3 ? fields[3] : null;
-                promotions.add(new Promotions(productOfPromotion));
-            }
-        } catch (IOException e) {
-        }
-        return promotions;
     }
 }

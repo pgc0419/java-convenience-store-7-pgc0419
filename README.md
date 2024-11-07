@@ -32,6 +32,8 @@
           - [ ] 상품 재고 업데이트 <br>
      - [ ] PayController.java <br>
           - [ ] 최종 결제 금액 계산 <br>
+     - [ ] DateController.java <br>
+          - [ ] 프로모션 날짜와 현재 날짜 비교 <br> 
      - [ ] ReceiptController.java <br>
           - [ ] 영수증 업데이트 <br>
      - [ ] Start.java <br>
