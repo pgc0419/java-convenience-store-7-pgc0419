@@ -3,21 +3,24 @@ package store.Model;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PromotionsReader {
-    private static final String FILE_PATH = "resources/products.md";
+    private static final String FILE_PATH = "/promotions.md";
 
     public List<Promotions> readPromotions() {
         List<Promotions> promotions = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(
+                getClass().getResourceAsStream(FILE_PATH)))) {
+            br.readLine();
             String line;
             while ((line = br.readLine()) != null) {
                 String[] fields = line.split(",");
                 String promotionName = fields[0];
-                int buy = Integer.parseInt(fields[1]);
-                int get = Integer.parseInt(fields[2]);
+                String buy = fields[1];
+                String get = fields[2];
                 promotions.add(new Promotions(promotionName, buy, get));
             }
         } catch (IOException e) {
@@ -27,7 +30,9 @@ public class PromotionsReader {
 
     public List<Date> readDate() {
         List<Date> date = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(
+                getClass().getResourceAsStream(FILE_PATH)))) {
+            br.readLine();
             String line;
             while ((line = br.readLine()) != null) {
                 String[] fields = line.split(",");

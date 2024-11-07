@@ -1,9 +1,13 @@
 package store.Model;
 
 public class Pay {
-    private final int price;
+    private final String price;
 
-    public Pay(int price) {
+    public Pay(String price) {
         this.price = price;
+    }
+
+    public String getPrice() {
+        return price;
     }
 }
