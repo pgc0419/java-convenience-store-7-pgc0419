@@ -46,6 +46,8 @@
           - [ ] 할인 미 포함 된 지불 해야 하는 금액 계산 <br>
      - [ ] Promotions.java <br>
           - [ ] 할인률 계산 <br>
+     - [ ] Date.java <br>
+          - [ ] 날짜 계산 <br>
      - [ ] PromotionsReader.java <br>
           - [ ] promotions.md 불러오기 <br> 
      - [ ] Membership.java <br>
