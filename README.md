@@ -29,7 +29,7 @@
 - [ ] Controller <br>
      - [ ] ProductsController.java <br>
           - [X] 상품명 리스트와 갯수 리스트로 변환
-          - [ ] 상품 재고 업데이트 <br>
+          - [X] 상품 재고 업데이트 <br>
      - [ ] PayController.java <br>
           - [ ] 최종 결제 금액 계산 <br>
      - [ ] DateController.java <br>

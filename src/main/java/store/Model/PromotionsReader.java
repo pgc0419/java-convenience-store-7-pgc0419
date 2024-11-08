@@ -1,7 +1,6 @@
 package store.Model;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -12,8 +11,7 @@ public class PromotionsReader {
 
     public List<Promotions> readPromotions() {
         List<Promotions> promotions = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(
-                getClass().getResourceAsStream(FILE_PATH)))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(FILE_PATH)))) {
             br.readLine();
             String line;
             while ((line = br.readLine()) != null) {
@@ -30,8 +28,7 @@ public class PromotionsReader {
 
     public List<Date> readDate() {
         List<Date> date = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(
-                getClass().getResourceAsStream(FILE_PATH)))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(FILE_PATH)))) {
             br.readLine();
             String line;
             while ((line = br.readLine()) != null) {

@@ -1,9 +1,9 @@
 package store.Model;
 
 public class Products {
-    private final String productName;
-    private final String quantity;
-    private final String productOfPromotion;
+    private String productName;
+    private String quantity;
+    private String productOfPromotion;
 
     public Products(String productName, String quantity, String productOfPromotion) {
         this.productName = productName;
@@ -21,5 +21,9 @@ public class Products {
 
     public String getProductOfPromotion() {
         return productOfPromotion;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 }

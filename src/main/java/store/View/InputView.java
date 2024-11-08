@@ -3,7 +3,16 @@ package store.View;
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
+    private static String mockInput; // 테스트용 입력값 저장
+
+    public static void mockInput(String input) {
+        mockInput = input;
+    }
+
     public static String[] readProduct() {
+        if (mockInput != null) { // 테스트 환경일 경우 mockInput 사용
+            return mockInput.split(",");
+        }
         System.out.println("구매하실 상품명과 수량을 입력해 주세요. (예: [사이다-2],[감자칩-1])");
         String input = Console.readLine();
         return input.split(",");
