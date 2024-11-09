@@ -68,9 +68,9 @@
      - [X] PromotionsReader <br>
           - [X] promotions.md 불러오기 <br> 
 ---
-- [ ] Updater <br>
-     - [ ] ProductsMDUpdater <br>
-          - [ ] products.md 업데이트 <br>
+- [X] Updater <br>
+     - [X] ProductsMDUpdater <br>
+          - [X] products.md 업데이트 <br>
 ---
 - [ ] Validate <br>
      - [ ] InputValidate.java <br>

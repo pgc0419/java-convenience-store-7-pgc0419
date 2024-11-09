@@ -43,4 +43,16 @@ public class ProductsReader {
         }
         return pay;
     }
+
+    public List<String> readRawLines() {
+        List<String> lines = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(FILE_PATH)))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                lines.add(line);
+            }
+        } catch (IOException e) {
+        }
+        return lines;
+    }
 }
