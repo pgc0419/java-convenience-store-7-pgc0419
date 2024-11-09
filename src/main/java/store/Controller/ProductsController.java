@@ -19,8 +19,8 @@ public class ProductsController {
         String[] productArray = InputView.readProduct();
 
         for (String product : productArray) {
-            InputValidate.InputNotNull(product); // Null 또는 빈값 확인
-            InputValidate.InputFormatValid(product); // 입력 형식 확인
+            InputValidate.InputNotNull(product);
+            InputValidate.InputFormatValid(product);
             product = product.trim().replace("[", "").replace("]", "");
             String[] parts = product.split("-");
             productNames.add(parts[0].trim());
@@ -33,8 +33,8 @@ public class ProductsController {
         String[] productArray = InputView.readProduct();
 
         for (String product : productArray) {
-            InputValidate.InputNotNull(product); // Null 또는 빈값 확인
-            InputValidate.InputFormatValid(product); // 입력 형식 확인
+            InputValidate.InputNotNull(product);
+            InputValidate.InputFormatValid(product);
             product = product.trim().replace("[", "").replace("]", "");
             String[] parts = product.split("-");
             inputQuantities.add(Integer.parseInt(parts[1].trim()));
@@ -47,8 +47,8 @@ public class ProductsController {
         List<Integer> inputQuantities = parseInputQuantities();
         List<String> availableProductNames = getAvailableProductNames();
 
-        InputValidate.ProductNotExist(productNames, availableProductNames); // 상품 존재 여부 확인
-        InputValidate.QuantityIsExceed(productNames, inputQuantities, products); // 재고 초과 여부 확인
+        InputValidate.ProductNotExist(productNames, availableProductNames);
+        InputValidate.QuantityIsExceed(productNames, inputQuantities, products);
 
         for (int i = 0; i < productNames.size(); i++) {
             String productName = productNames.get(i);
@@ -82,7 +82,7 @@ public class ProductsController {
         return products.stream()
                 .filter(product -> product.getProductName().equals(productName))
                 .findFirst()
-                .orElse(null); // 예외를 던지지 않고 null 반환
+                .orElse(null);
     }
 
     private int calculateUpdatedQuantity(Products product, int inputQuantity) {

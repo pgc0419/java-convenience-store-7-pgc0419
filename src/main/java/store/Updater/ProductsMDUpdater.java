@@ -17,7 +17,7 @@ public class ProductsMDUpdater {
     }
 
     private List<String> replaceQuantitiesInLines(List<String> originalLines, List<Products> products) {
-        for (int i = 1; i < originalLines.size(); i++) { // Skip header
+        for (int i = 1; i < originalLines.size(); i++) {
             String[] fields = originalLines.get(i).split(",");
             for (Products product : products) {
                 if (isMatchingProduct(fields, product)) {

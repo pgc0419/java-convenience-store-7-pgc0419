@@ -42,7 +42,9 @@
     - [X] 상품 재고 업데이트 <br>
     - [X] 예외 처리 <br>
   - [ ] PromotionsController.java <br>
-    - [ ] 상품명 리스트와 갯수 리스트로 변환 <br>
+    - [ ] 적용되는 프로모션 찾기 <br>
+    - [ ] 프로모션 적용 가능 안내 <br>
+    - [ ] 프로모션 적용 불가 안내 <br>
   - [ ] ReceiptController.java <br>
     - [ ] 영수증 업데이트 <br>
   - [ ] Start.java <br>
