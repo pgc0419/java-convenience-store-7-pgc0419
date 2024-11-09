@@ -14,6 +14,9 @@
 │    ├── Membership.java <br>
 │    ├── Receipt.java <br>
 │    └── ReceiptForm.java <br>
+├── Reader <br>
+│    ├── ProductsReader.java <br>
+│    └── PromotionsReader.java <br>
 ├── Validate <br>
 │    ├── InputValidate.java <br>
 │    └── YNValidate.java <br>
@@ -40,9 +43,9 @@
           - [ ] 프로그램 가동을 위한 코드 연결 <br>
 ---
 - [ ] Model <br>
-     - [ ] Products.java <br>
-          - [ ] 상품 재고 계산 <br>
-     - [ ] ProductsReader.java <br>
+     - [X] Products.java <br>
+          - [X] 모델 선언 <br>
+     - [X] ProductsReader.java <br>
           - [X] products.md 불러오기 <br> 
      - [ ] Pay.java <br>
           - [ ] 할인 미 포함 된 지불 해야 하는 금액 계산 <br>
@@ -50,7 +53,7 @@
           - [ ] 할인률 계산 <br>
      - [ ] Date.java <br>
           - [ ] 날짜 계산 <br>
-     - [ ] PromotionsReader.java <br>
+     - [X] PromotionsReader.java <br>
           - [X] promotions.md 불러오기 <br> 
      - [ ] Membership.java <br>
           - [ ] 할인률 계산 <br>
@@ -59,6 +62,11 @@
      - [ ] ReceiptForm.java <br>
           - [ ] (Enum) 영수증 상수 필드 제작 <br>
 ---
+- [X] Reader <br>
+     - [X] ProductsReader <br>
+          - [X] products.md 불러오기 <br>
+     - [X] PromotionsReader <br>
+          - [X] promotions.md 불러오기 <br> 
 - [ ] Validate <br>
      - [ ] InputValidate.java <br>
           - [ ] [ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요. <br>
