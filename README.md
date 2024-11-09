@@ -40,8 +40,9 @@
           - [X] 예외 처리 <br>
      - [ ] PayController.java <br>
           - [ ] 최종 결제 금액 계산 <br>
-     - [ ] DateController.java <br>
-          - [ ] 프로모션 날짜와 현재 날짜 비교 <br> 
+     - [X] DateController.java <br>
+          - [X] 프로모션 날짜와 현재 날짜 비교 <br> 
+          - [X] 활성화 프로모션 추출 <br>
      - [ ] ReceiptController.java <br>
           - [ ] 영수증 업데이트 <br>
      - [ ] Start.java <br>
@@ -54,8 +55,8 @@
           - [ ] 할인 미 포함 된 지불 해야 하는 금액 계산 <br>
      - [ ] Promotions.java <br>
           - [ ] 할인률 계산 <br>
-     - [ ] Date.java <br>
-          - [ ] 날짜 계산 <br>
+     - [X] Date.java <br>
+          - [X] 모델 선언 <br>
      - [ ] Membership.java <br>
           - [ ] 할인률 계산 <br>
      - [ ] Receipt.java <br>
