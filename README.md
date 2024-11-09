@@ -19,6 +19,8 @@
 ├── Reader <br>
 │    ├── ProductsReader.java <br>
 │    └── PromotionsReader.java <br>
+├── Updater <br>
+│    └── ProductsMDUpdater.java <br>
 ├── Validate <br>
 │    ├── InputValidate.java <br>
 │    └── YNValidate.java <br>
@@ -65,6 +67,11 @@
           - [X] products.md 불러오기 <br>
      - [X] PromotionsReader <br>
           - [X] promotions.md 불러오기 <br> 
+---
+- [ ] Updater <br>
+     - [ ] ProductsMDUpdater <br>
+          - [ ] products.md 업데이트 <br>
+---
 - [ ] Validate <br>
      - [ ] InputValidate.java <br>
           - [ ] [ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요. <br>
