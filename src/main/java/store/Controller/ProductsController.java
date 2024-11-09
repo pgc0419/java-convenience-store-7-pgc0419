@@ -2,6 +2,7 @@ package store.Controller;
 
 import store.View.InputView;
 import store.Model.Products;
+import store.Validate.InputValidate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,10 @@ public class ProductsController {
     public List<String> parseProductNames() {
         List<String> productNames = new ArrayList<>();
         String[] productArray = InputView.readProduct();
+
         for (String product : productArray) {
+            InputValidate.InputNotNull(product); // Null 또는 빈값 확인
+            InputValidate.InputFormatValid(product); // 입력 형식 확인
             product = product.trim().replace("[", "").replace("]", "");
             String[] parts = product.split("-");
             productNames.add(parts[0].trim());
@@ -24,56 +28,65 @@ public class ProductsController {
         return productNames;
     }
 
-    public List<String> parseInputQuantities() {
-        List<String> inputQuantities = new ArrayList<>();
+    public List<Integer> parseInputQuantities() {
+        List<Integer> inputQuantities = new ArrayList<>();
         String[] productArray = InputView.readProduct();
+
         for (String product : productArray) {
+            InputValidate.InputNotNull(product); // Null 또는 빈값 확인
+            InputValidate.InputFormatValid(product); // 입력 형식 확인
             product = product.trim().replace("[", "").replace("]", "");
             String[] parts = product.split("-");
-            inputQuantities.add(parts[1].trim());
+            inputQuantities.add(Integer.parseInt(parts[1].trim()));
         }
         return inputQuantities;
     }
 
     public void updateQuantities() {
         List<String> productNames = parseProductNames();
-        List<String> inputQuantities = parseInputQuantities();
+        List<Integer> inputQuantities = parseInputQuantities();
+        List<String> availableProductNames = getAvailableProductNames();
+
+        InputValidate.ProductNotExist(productNames, availableProductNames); // 상품 존재 여부 확인
+        InputValidate.QuantityIsExceed(productNames, inputQuantities, products); // 재고 초과 여부 확인
 
         for (int i = 0; i < productNames.size(); i++) {
             String productName = productNames.get(i);
-            int inputQuantity = Integer.parseInt(inputQuantities.get(i));
+            int inputQuantity = inputQuantities.get(i);
             updateProductQuantity(productName, inputQuantity);
         }
     }
 
+    private List<String> getAvailableProductNames() {
+        List<String> availableProductNames = new ArrayList<>();
+        for (Products product : products) {
+            availableProductNames.add(product.getProductName());
+        }
+        return availableProductNames;
+    }
+
     private void updateProductQuantity(String productName, int inputQuantity) {
         Products product = findProductByName(productName);
-        int updatedQuantity = calculateUpdatedQuantity(product, inputQuantity);
-        product.setQuantity(String.valueOf(updatedQuantity));
+        if (product != null) {
+            int updatedQuantity = calculateUpdatedQuantity(product, inputQuantity);
 
-        if (updatedQuantity == 0) {
-            product.setQuantity("재고 없음");
-        } else {
-            product.setQuantity(String.valueOf(updatedQuantity));
+            if (updatedQuantity == 0) {
+                product.setQuantity("재고 없음");
+            } else {
+                product.setQuantity(String.valueOf(updatedQuantity));
+            }
         }
     }
 
     private Products findProductByName(String productName) {
-        for (Products product : products) {
-            if (product.getProductName().equals(productName)) {
-                return product;
-            }
-        }
-        throw new IllegalArgumentException("제품이 존재하지 않습니다. " + productName);
+        return products.stream()
+                .filter(product -> product.getProductName().equals(productName))
+                .findFirst()
+                .orElse(null); // 예외를 던지지 않고 null 반환
     }
 
     private int calculateUpdatedQuantity(Products product, int inputQuantity) {
         int currentQuantity = Integer.parseInt(product.getQuantity());
-        int updatedQuantity = currentQuantity - inputQuantity;
-
-        if (updatedQuantity < 0) {
-            throw new IllegalArgumentException("수량이 존재하지 않습니다. " + product.getProductName());
-        }
-        return updatedQuantity;
+        return currentQuantity - inputQuantity;
     }
 }

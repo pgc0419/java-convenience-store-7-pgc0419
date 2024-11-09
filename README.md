@@ -35,8 +35,9 @@
 ---
 - [ ] Controller <br>
      - [X] ProductsController.java <br>
-          - [X] 상품명 리스트와 갯수 리스트로 변환
+          - [X] 상품명 리스트와 갯수 리스트로 변환 <br>
           - [X] 상품 재고 업데이트 <br>
+          - [X] 예외 처리 <br>
      - [ ] PayController.java <br>
           - [ ] 최종 결제 금액 계산 <br>
      - [ ] DateController.java <br>
@@ -73,11 +74,10 @@
           - [X] products.md 업데이트 <br>
 ---
 - [ ] Validate <br>
-     - [ ] InputValidate.java <br>
-          - [ ] [ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요. <br>
-          - [ ] [ERROR] 존재하지 않는 상품입니다. 다시 입력해 주세요. <br>
-          - [ ] [ERROR] 재고 수량을 초과하여 구매할 수 없습니다. 다시 입력해 주세요. <br>
-          - [ ] [ERROR] 잘못된 입력입니다. 다시 입력해 주세요. <br>
+     - [X] InputValidate.java <br>
+          - [X] [ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요. <br>
+          - [X] [ERROR] 존재하지 않는 상품입니다. 다시 입력해 주세요. <br>
+          - [X] [ERROR] 재고 수량을 초과하여 구매할 수 없습니다. 다시 입력해 주세요. <br>
      - [ ] YNValidate.java <br>
           - [ ] [ERROR] 잘못된 입력입니다. 다시 입력해 주세요. <br>
 ---

@@ -57,9 +57,9 @@ public class ProductsControllerTest {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 controller::updateQuantities,
-                "수량 초과 시 예외가 발생해야 합니다."
+                "[ERROR] 재고 수량을 초과하여 구매할 수 없습니다. 다시 입력해 주세요."
         );
-        assertTrue(exception.getMessage().contains("수량이 존재하지 않습니다. 콜라"));
+        assertTrue(exception.getMessage().contains("[ERROR] 재고 수량을 초과하여 구매할 수 없습니다. 다시 입력해 주세요."));
     }
 
     @DisplayName("상품명이 목록에 없을 경우 테스트")
@@ -74,8 +74,42 @@ public class ProductsControllerTest {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 controller::updateQuantities,
-                "존재하지 않는 상품 입력 시 예외가 발생해야 합니다."
+                "[ERROR] 존재하지 않는 상품입니다. 다시 입력해 주세요."
         );
-        assertTrue(exception.getMessage().contains("제품이 존재하지 않습니다. 사이다"));
+        assertTrue(exception.getMessage().contains("[ERROR] 존재하지 않는 상품입니다. 다시 입력해 주세요."));
+    }
+
+    @DisplayName("공백 입력 시 테스트")
+    @Test
+    void 공백_입력_시_테스트() {
+        List<Products> products = new ArrayList<>();
+        products.add(new Products("콜라", "10", null));
+        ProductsController controller = new ProductsController(products);
+
+        InputView.mockInput(" ");
+
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                controller::updateQuantities,
+                "[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."
+        );
+        assertTrue(exception.getMessage().contains("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."));
+    }
+
+    @DisplayName("올바르지 않은 형식 입력 시 예외 처리 테스트")
+    @Test
+    void 올바르지_않은_형식_입력_예외_처리_테스트() {
+        List<Products> products = new ArrayList<>();
+        products.add(new Products("콜라", "10", null));
+        ProductsController controller = new ProductsController(products);
+
+        InputView.mockInput("[콜라],[10],[콜라-10-10]");
+
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                controller::updateQuantities,
+                "[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."
+        );
+        assertTrue(exception.getMessage().contains("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."));
     }
 }
