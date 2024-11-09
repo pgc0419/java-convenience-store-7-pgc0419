@@ -3,11 +3,13 @@
 ## 디렉토리 구조
 ├── Application.java <br> 
 ├── Controller <br>
+│    ├── DateController.java <br>
 │    ├── ProductsController.java <br>
 │    ├── PayController.java <br>
 │    ├── ReceiptController.java <br>
 │    └── Start.java <br>
 ├── Model <br>
+│    ├── Date.java <br>
 │    ├── Products.java <br>
 │    ├── Pay.java <br>
 │    ├── Promotion.java <br>
@@ -30,7 +32,7 @@
      - [ ] Start.java 새로운 선언자로 선언하여 프로그래밍 가동 <br>
 ---
 - [ ] Controller <br>
-     - [ ] ProductsController.java <br>
+     - [X] ProductsController.java <br>
           - [X] 상품명 리스트와 갯수 리스트로 변환
           - [X] 상품 재고 업데이트 <br>
      - [ ] PayController.java <br>
@@ -45,16 +47,12 @@
 - [ ] Model <br>
      - [X] Products.java <br>
           - [X] 모델 선언 <br>
-     - [X] ProductsReader.java <br>
-          - [X] products.md 불러오기 <br> 
      - [ ] Pay.java <br>
           - [ ] 할인 미 포함 된 지불 해야 하는 금액 계산 <br>
      - [ ] Promotions.java <br>
           - [ ] 할인률 계산 <br>
      - [ ] Date.java <br>
           - [ ] 날짜 계산 <br>
-     - [X] PromotionsReader.java <br>
-          - [X] promotions.md 불러오기 <br> 
      - [ ] Membership.java <br>
           - [ ] 할인률 계산 <br>
      - [ ] Receipt.java <br>
