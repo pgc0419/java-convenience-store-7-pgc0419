@@ -22,10 +22,10 @@ public class UpdaterTest {
         updater = new ProductsMDUpdater();
         createTestFile();
         testProducts = new ArrayList<>();
-        testProducts.add(new Products("콜라", "7", "탄산2+1"));
-        testProducts.add(new Products("콜라", "9", "null"));
-        testProducts.add(new Products("사이다", "5", "탄산2+1"));
-        testProducts.add(new Products("사이다", "6", "null"));
+        testProducts.add(new Products("콜라", "1000", "7", "탄산2+1"));
+        testProducts.add(new Products("콜라", "1000", "9", "null"));
+        testProducts.add(new Products("사이다", "1000", "5", "탄산2+1"));
+        testProducts.add(new Products("사이다", "1000", "6", "null"));
     }
 
     @AfterEach

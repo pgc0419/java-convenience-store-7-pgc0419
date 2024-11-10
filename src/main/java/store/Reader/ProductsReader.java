@@ -1,6 +1,5 @@
 package store.Reader;
 
-import store.Model.Pay;
 import store.Model.Products;
 
 import java.io.BufferedReader;
@@ -20,28 +19,14 @@ public class ProductsReader {
             while ((line = br.readLine()) != null) {
                 String[] fields = line.split(",");
                 String productName = fields[0];
+                String price = fields[1];
                 String quantity = fields[2];
                 String productOfPromotion = fields.length > 3 ? fields[3] : null;
-                products.add(new Products(productName, quantity, productOfPromotion));
+                products.add(new Products(productName, price, quantity, productOfPromotion));
             }
         } catch (IOException e) {
         }
         return products;
-    }
-
-    public List<Pay> readPrices() {
-        List<Pay> pay = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(FILE_PATH)))) {
-            br.readLine();
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] fields = line.split(",");
-                String price = fields[1];
-                pay.add(new Pay(price));
-            }
-        } catch (IOException e) {
-        }
-        return pay;
     }
 
     public List<String> readRawLines() {

@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import store.Reader.ProductsReader;
 import store.Reader.PromotionsReader;
 import store.Model.Products;
-import store.Model.Pay;
 import store.Model.Promotions;
 import store.Model.Date;
 
@@ -37,18 +36,6 @@ public class ReaderTest {
         assertThat(firstProduct.getProductName()).isNotNull();
         assertThat(Integer.parseInt(firstProduct.getQuantity())).isGreaterThan(0);
         assertThat(firstProduct.getProductOfPromotion()).isNotNull();
-    }
-
-    @DisplayName("ProductsReader Pay 테스트")
-    @Test
-    void ProductsReader_Pay_테스트() {
-        List<Pay> pay = productsReader.readPrices();
-
-        assertThat(pay).isNotNull();
-        assertThat(pay.size()).isGreaterThan(0);
-
-        Pay firstProduct = pay.get(0);
-        assertThat(Integer.parseInt(firstProduct.getPrice())).isGreaterThan(0);
     }
 
     @DisplayName("PromotionsReader Promotions 테스트")

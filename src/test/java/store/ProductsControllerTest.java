@@ -17,8 +17,8 @@ public class ProductsControllerTest {
     @Test
     void UpdateQuantities_성공_테스트() {
         List<Products> products = new ArrayList<>();
-        products.add(new Products("콜라", "10", null));
-        products.add(new Products("사이다", "8", null));
+        products.add(new Products("콜라", "1000", "10", null));
+        products.add(new Products("사이다", "1000", "8", null));
         ProductsController controller = new ProductsController(products);
 
         InputView.mockInput("[콜라-5], [사이다-3]");
@@ -33,8 +33,8 @@ public class ProductsControllerTest {
     @Test
     void 재고_없음_테스트() {
         List<Products> products = new ArrayList<>();
-        products.add(new Products("콜라", "5", null));
-        products.add(new Products("사이다", "3", null));
+        products.add(new Products("콜라", "1000", "5", null));
+        products.add(new Products("사이다", "1000", "3", null));
         ProductsController controller = new ProductsController(products);
 
         InputView.mockInput("[콜라-5], [사이다-3]");
@@ -49,7 +49,7 @@ public class ProductsControllerTest {
     @Test
     void 재고_초과_테스트() {
         List<Products> products = new ArrayList<>();
-        products.add(new Products("콜라", "5", null));
+        products.add(new Products("콜라", "1000", "5", null));
         ProductsController controller = new ProductsController(products);
 
         InputView.mockInput("[콜라-10]");
@@ -66,7 +66,7 @@ public class ProductsControllerTest {
     @Test
     void 상품명이_목록에_없을_경우_테스트() {
         List<Products> products = new ArrayList<>();
-        products.add(new Products("콜라", "10", null));
+        products.add(new Products("콜라", "1000", "10", null));
         ProductsController controller = new ProductsController(products);
 
         InputView.mockInput("[사이다-5]");
@@ -83,7 +83,7 @@ public class ProductsControllerTest {
     @Test
     void 공백_입력_시_테스트() {
         List<Products> products = new ArrayList<>();
-        products.add(new Products("콜라", "10", null));
+        products.add(new Products("콜라", "1000", "10", null));
         ProductsController controller = new ProductsController(products);
 
         InputView.mockInput(" ");
@@ -100,7 +100,7 @@ public class ProductsControllerTest {
     @Test
     void 올바르지_않은_형식_입력_예외_처리_테스트() {
         List<Products> products = new ArrayList<>();
-        products.add(new Products("콜라", "10", null));
+        products.add(new Products("콜라", "1000", "10", null));
         ProductsController controller = new ProductsController(products);
 
         InputView.mockInput("[콜라],[10],[콜라-10-10]");

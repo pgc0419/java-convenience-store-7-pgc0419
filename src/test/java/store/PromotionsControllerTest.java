@@ -56,11 +56,11 @@ public class PromotionsControllerTest {
         DateController dateController = new DateController(mockPromotionsReader(), specificDate);
 
         List<Products> products = List.of(
-                new Products("콜라", "6", "탄산2+1"),
-                new Products("사이다", "5", "MD추천상품"),
-                new Products("탄산수", "4", "반짝할인"),
-                new Products("물", "3", null),
-                new Products("콜라", "2", null)
+                new Products("콜라", "1000", "6", "탄산2+1"),
+                new Products("사이다", "1000", "5", "MD추천상품"),
+                new Products("탄산수", "1200", "4", "반짝할인"),
+                new Products("물", "500", "3", null),
+                new Products("콜라", "1000", "2", null)
         );
 
         InputView inputView = mockInputView(promotionResponse, promotionSaleResponse);
@@ -74,7 +74,7 @@ public class PromotionsControllerTest {
         PromotionsController promotionsController = setupController("Y", "N");
 
         List<Map<String, Object>> twoPlusOneResults = promotionsController.calculateTwoPlusOnePromotion(List.of(
-                new Products("콜라", "8", "탄산2+1")
+                new Products("콜라", "1000", "8", "탄산2+1")
         ));
 
         for (Map<String, Object> result : twoPlusOneResults) {
@@ -90,7 +90,7 @@ public class PromotionsControllerTest {
         PromotionsController promotionsController = setupController("Y", "N");
 
         List<Map<String, Object>> mdResults = promotionsController.calculateMDPromotion(List.of(
-                new Products("사이다", "5", "MD추천상품")
+                new Products("사이다", "1000", "5", "MD추천상품")
         ));
 
         for (Map<String, Object> result : mdResults) {
@@ -106,7 +106,7 @@ public class PromotionsControllerTest {
         PromotionsController promotionsController = setupController("Y", "N");
 
         List<Map<String, Object>> timeSaleResults = promotionsController.calculateTimeSalePromotion(List.of(
-                new Products("탄산수", "4", "반짝할인")
+                new Products("탄산수", "1200", "4", "반짝할인")
         ));
 
         for (Map<String, Object> result : timeSaleResults) {
@@ -136,7 +136,7 @@ public class PromotionsControllerTest {
         PromotionsController promotionsController = setupController("N", "N");
 
         List<Map<String, Object>> twoPlusOneResults = promotionsController.calculateTwoPlusOnePromotion(List.of(
-                new Products("콜라", "8", "탄산2+1")
+                new Products("콜라", "1000", "8", "탄산2+1")
         ));
 
         for (Map<String, Object> result : twoPlusOneResults) {
@@ -152,7 +152,7 @@ public class PromotionsControllerTest {
         PromotionsController promotionsController = setupController("N", "N");
 
         List<Map<String, Object>> mdResults = promotionsController.calculateMDPromotion(List.of(
-                new Products("사이다", "5", "MD추천상품")
+                new Products("사이다", "1000", "5", "MD추천상품")
         ));
 
         for (Map<String, Object> result : mdResults) {
@@ -168,7 +168,7 @@ public class PromotionsControllerTest {
         PromotionsController promotionsController = setupController("N", "N");
 
         List<Map<String, Object>> timeSaleResults = promotionsController.calculateTimeSalePromotion(List.of(
-                new Products("탄산수", "4", "반짝할인")
+                new Products("탄산수", "1200", "4", "반짝할인")
         ));
 
         for (Map<String, Object> result : timeSaleResults) {
@@ -177,4 +177,5 @@ public class PromotionsControllerTest {
             assertEquals(2, result.get("get"));
         }
     }
+
 }

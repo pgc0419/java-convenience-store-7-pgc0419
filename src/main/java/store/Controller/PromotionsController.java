@@ -6,6 +6,8 @@ import store.View.*;
 import java.util.*;
 
 public class PromotionsController {
+    private final List<Map<String, Object>> allPromotionResults = new ArrayList<>();
+
     private final List<Products> products;
     private final DateController dateController;
     private final InputView inputView;
@@ -14,6 +16,10 @@ public class PromotionsController {
         this.products = products;
         this.dateController = dateController;
         this.inputView = inputView;
+    }
+
+    public List<Map<String, Object>> getAllPromotionResults() {
+        return allPromotionResults;
     }
 
     public List<Products> findProductsWithActivePromotions() {
@@ -53,12 +59,15 @@ public class PromotionsController {
 
         List<Map<String, Object>> twoPlusOneResults = calculateTwoPlusOnePromotion(TwoPlusOnePromotions);
         applyPromotion(twoPlusOneResults, "탄산2+1");
+        allPromotionResults.addAll(twoPlusOneResults);
 
         List<Map<String, Object>> mdResults = calculateMDPromotion(MDPromotions);
         applyPromotion(mdResults, "MD추천상품");
+        allPromotionResults.addAll(mdResults);
 
         List<Map<String, Object>> timeSaleResults = calculateTimeSalePromotion(TimeSalePromotions);
         applyPromotion(timeSaleResults, "반짝할인");
+        allPromotionResults.addAll(timeSaleResults);
     }
 
     private void applyPromotion(List<Map<String, Object>> promotionResults, String promotionType) {
@@ -75,7 +84,7 @@ public class PromotionsController {
                         .replace("{상품명}", productName);
 
                 if (userResponse.equalsIgnoreCase("N")) {
-                } else {;
+                } else {
                     get -= 1;
                 }
             }
