@@ -36,15 +36,16 @@
     - [X] 프로모션 날짜와 현재 날짜 비교 <br>
     - [X] 활성화 프로모션 추출 <br>
   - [ ] PayController.java <br>
+    - [ ] 멤버십 미포함 결제 금액 계산 <br> 
     - [ ] 최종 결제 금액 계산 <br>
   - [X] ProductsController.java <br>
     - [X] 상품명 리스트와 갯수 리스트로 변환 <br>
     - [X] 상품 재고 업데이트 <br>
     - [X] 예외 처리 <br>
-  - [ ] PromotionsController.java <br>
-    - [ ] 적용되는 프로모션 찾기 <br>
-    - [ ] 프로모션 적용 가능 안내 <br>
-    - [ ] 프로모션 적용 불가 안내 <br>
+  - [X] PromotionsController.java <br>
+    - [X] 적용되는 프로모션 찾기 <br>
+    - [X] 프로모션 적용 가능 안내 <br>
+    - [X] 프로모션 적용 불가 안내 <br>
   - [ ] ReceiptController.java <br>
     - [ ] 영수증 업데이트 <br>
   - [ ] Start.java <br>
@@ -56,11 +57,11 @@
   - [ ] Membership.java <br>
     - [ ] 할인률 계산 <br>
   - [ ] Pay.java <br>
-    - [ ] 할인 미 포함 된 지불 해야 하는 금액 계산 <br>
+    - [ ] 모델 선언 <br>
   - [X] Products.java <br>
     - [X] 모델 선언 <br>
-  - [ ] Promotions.java <br>
-    - [ ] 프로모션 적용 <br>
+  - [X] Promotions.java <br>
+    - [X] 모델 선언
   - [ ] Receipt.java <br>
     - [ ] 영수증 필드에 추가하는 로직 <br>
   - [ ] ReceiptForm.java <br>
