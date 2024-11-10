@@ -11,7 +11,6 @@
 │    └── Start.java <br>
 ├── Model <br>
 │    ├── Date.java <br>
-│    ├── Membership.java <br>
 │    ├── Products.java <br>
 │    ├── Promotion.java <br>
 │    ├── Receipt.java <br>
@@ -53,8 +52,6 @@
 - [ ] Model <br>
   - [X] Date.java <br>
     - [X] 모델 선언 <br>
-  - [ ] Membership.java <br>
-    - [ ] 할인률 계산 <br>
   - [X] Products.java <br>
     - [X] 모델 선언 <br>
   - [X] Promotions.java <br>
